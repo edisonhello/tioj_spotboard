@@ -26,6 +26,8 @@ function get_runs() {
 			for (let i in res) {
 				let d = new Date(res[i].created_at)
 				let subtime = Math.floor((d - contest_start_time) / 1000 / 60 + 0.00000001)
+				if (['AC', 'WA', 'MLE', 'TLE', 'RE'].indexOf(res[i].result) === -1) continue
+				let result = (res[i].result == 'AC' ? 'Yes' : 'No')
 				runs.push({ id: res[i].id,
 					    team: res[i].user_id - myconfig.team_id_offset,
 					    problem: res[i].problem_id - myconfig.problem_id_offset,
