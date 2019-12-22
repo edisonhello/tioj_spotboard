@@ -2,5 +2,6 @@
 	"contest_id": 1,
 	"team_id_offset": 10,
 	"problem_id_offset": 15,
-	"password": "<password here>"
+	"password": "<password here>",
+	"path_to_runs": "~/spotboard/webapp/dist/sample/runs.json"
 }

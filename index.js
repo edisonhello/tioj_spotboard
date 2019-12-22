@@ -44,7 +44,7 @@ connection.query(`select * from contests where id=${myconfig.contest_id}`, (err,
 	if (err) throw err
 	contest_start_time = res[0].start_time
 	get_runs().then((runs) => {
-		fs.writeFileSync("runs.json", JSON.stringify(runs))
+		fs.writeFileSync(myconfig.path_to_runs, JSON.stringify(runs))
 		process.exit(0)
 	}).catch(err => { throw err })
 })
