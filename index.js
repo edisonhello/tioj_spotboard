@@ -26,14 +26,13 @@ function get_runs() {
 			for (let i in res) {
 				let d = new Date(res[i].created_at)
 				let subtime = Math.floor((d - contest_start_time) / 1000 / 60 + 0.00000001)
-				runs.push({id: res[i].id,
-					   team: res[i].user_id - 14,
-					   problem: res[i].problem_id - 11,
-					   result: (res[i].result == 'AC' ? 'Yes' : 'No'),
-					   submissionTime: subtime
-				})
+				runs.push({ id: res[i].id,
+					    team: res[i].user_id - myconfig.team_id_offset,
+					    problem: res[i].problem_id - myconfig.problem_id_offset,
+					    result: (res[i].result == 'AC' ? 'Yes' : 'No'),
+					    submissionTime: subtime })
 			}
-			runs = { "runs": runs }
+			runs = { runs }
 			return resolve(runs)
 		})
 	})
