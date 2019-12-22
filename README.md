@@ -13,3 +13,6 @@ alter user 'root'@'localhost' identified by 'new_password';
 ```
 
 .
+
+Note that the problem id must start from 0 in runs.
+
